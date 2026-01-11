@@ -1,20 +1,23 @@
 ---
-title: "About"
-image: profile.jpg
+title: "Yuhang Fang"
 about:
-  template: jolla
+  template: broadside
+  image: profile.jpg
   links:
     - icon: twitter
-      text: Twitter
-      href: https://twitter.com
-    - icon: linkedin
-      text: LinkedIn
-      href: https://linkedin.com
+      text: twitter
+      href: https://x.com/Cosmic_YH
     - icon: github
       text: Github
-      href: https://github.com
-
+      href: https://github.com/yuhangf2333/
 ---
 
-About this blog
-欢迎欢迎
+
+## Education
+
+Politecnico Di Milano | Milano, Italy
+Msc in Geoinformation | Sept 2025 - Now
+
+China University of Geosciences | Beijing, China
+BEng in Computer Science | Sept 2020 - June 2024
+
