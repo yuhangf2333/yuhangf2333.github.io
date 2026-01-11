@@ -2,7 +2,7 @@
 title: "Yuhang Fang"
 about:
   template: broadside
-  image: profile.jpg
+  image: 20251.jpg
   links:
     - icon: twitter
       text: twitter
@@ -16,8 +16,8 @@ about:
 ## Education
 
 Politecnico Di Milano | Milano, Italy
-Msc in Geoinformation | Sept 2025 - Now
+Msc. in Geoinformation | Sept 2025 - Now
 
 China University of Geosciences | Beijing, China
-BEng in Computer Science | Sept 2020 - June 2024
+BEng. in Computer Science | Sept 2020 - June 2024
 
