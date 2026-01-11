@@ -2,7 +2,7 @@
 title: "Yuhang Fang"
 about:
   template: broadside
-  image: 20251.jpg
+  image: 20251.jpeg
   links:
     - icon: twitter
       text: twitter
