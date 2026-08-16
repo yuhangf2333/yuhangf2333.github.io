@@ -1,0 +1,65 @@
+name: Deploy to GitHub Pages
+
+# One-time setup: Settings → Pages → Source: GitHub Actions. (The workflow
+# cannot do this for you — creating a Pages site needs a permission the
+# built-in Actions token cannot be granted.)
+# After that, every push to main rebuilds and republishes the site.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      # Reads your Pages settings and reports the URL the site will be served
+      # from — custom domain included. The build step below uses it, so
+      # canonical links, social cards and the sitemap are right without anyone
+      # editing a config file first.
+      - name: Detect the Pages URL
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+
+      # Anything in public/ is copied verbatim into dist/, which is how a
+      # public/CNAME file keeps a custom domain bound.
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

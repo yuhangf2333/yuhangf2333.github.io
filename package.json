@@ -1,0 +1,22 @@
+{
+  "name": "academic-homepage",
+  "version": "1.0.0",
+  "description": "A fast, single-page academic homepage template built with Astro. Edit one file, deploy to GitHub Pages.",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "oxlint",
+    "subset:cn": "node scripts/subset-cn-font.mjs",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^7.2.2"
+  },
+  "devDependencies": {
+    "oxlint": "^1.75.0"
+  }
+}
