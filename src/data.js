@@ -15,19 +15,15 @@
 // Images are imported from src/assets/ rather than written as public/ paths,
 // so Astro can compress them, convert to WebP and emit a srcset at build time.
 // Swap the files in place and the build takes care of the rest.
-import photo from "./assets/photo.jpg";
-import northfield from "./assets/logos/northfield.png";
-import lakeside from "./assets/logos/lakeside.png";
-import riverbend from "./assets/logos/riverbend.png";
+import photo from "./assets/photo.png";
+import usp from "./assets/logos/usp.png";
+import polimi from "./assets/logos/polimi.svg";
+import cugb from "./assets/logos/cugb.png";
 
-// Path to your CV inside public/. Putting the year and month in the filename
-// means anyone who saves it can tell which version they have. To update:
-// drop the new PDF into public/ under a new name, then change this line —
-// the sidebar link and the About text both read this constant.
-export const CV_URL = "Jane_Doe_CV_Jan2026.pdf";
+export const CV_URL = "Yuhang_Fang_CV_Aug2026.pdf";
 
 export const profile = {
-  nameEn: "Jane Doe",
+  nameEn: "Yuhang Fang",
   // Optional second name shown next to the English one in the masthead, meant
   // for a name in a non-Latin script (Chinese, Japanese, Korean, Greek,
   // Cyrillic…). Leave it empty and nothing renders.
@@ -37,35 +33,26 @@ export const profile = {
   // system font — see the "Chinese (or other CJK) name" section of the README.
   nameCn: "",
   // Each string is one line, so you control where the role wraps.
-  role: ["Ph.D. Student in Economics,", "Northfield University"],
-  location: "Northfield, Example State",
-  photo, // src/assets/photo.jpg; a grey placeholder shows if it fails to load
+  role: ["Ola"],
+  location: "São Paulo, Brazil",
+  photo,
   links: [
-    { label: "Email", href: "mailto:jane.doe@example.edu" },
-    { label: "GitHub", href: "https://github.com/example" },
-    { label: "Google Scholar", href: "https://scholar.google.com/" },
-    // newTab: true opens the PDF in the browser's viewer instead of
-    // navigating away from the page.
+    { label: "Email", href: "mailto:yuhangf2333@gmail.com" },
+    {
+      label: "GitHub",
+      href: "https://github.com/yuhangf2333",
+      newTab: true,
+    },
     { label: "CV (PDF)", href: CV_URL, newTab: true },
   ],
 };
 
 export const about = [
-  `I am a Ph.D. student in Economics at
-   <a href="https://example.edu/">Northfield University</a>, advised by
-   Prof. <a href="https://example.edu/faculty/a-smith">Alice Smith</a>. Before
-   that I read Economics at Riverbend State University and spent a term as a
-   visiting student at the Lakeside Institute of Technology.`,
-  `I study how the design of a market shapes what the people inside it do. My
-   current work combines field data with large-scale simulation: I build
-   agent-based models of matching markets, then test their predictions against
-   administrative records from online labour platforms. A second line of work
-   uses text-as-data methods to measure policy from government documents at a
-   scale hand-coding cannot reach.`,
-  `I am always glad to hear from people working on adjacent questions — market
-   design, computational social science, or text as data. You can reach me by
-   <a href="mailto:jane.doe@example.edu">email</a>, or read
-   <a href="${CV_URL}" target="_blank" rel="noopener noreferrer">my CV here</a>.`,
+  `I am a master's student in a double-degree program between Universidade de
+   São Paulo and Politecnico di Milano, studying Engenharia da Computação and
+   Geoinformatics Engineering. I previously earned a Bachelor of Engineering
+   in Computer Science and Technology from China University of Geosciences
+   Beijing.`,
 ];
 
 // Short, dated updates — new papers, talks, moves. Keep the newest first and
@@ -73,25 +60,8 @@ export const about = [
 // the section entirely.
 export const news = [
   {
-    date: "Jan 2026",
-    text: `Our paper on matching markets was accepted at the
-           <em>Journal of Example Economics</em>.`,
-  },
-  {
-    date: "Nov 2025",
-    text: `Presented <strong>Simulating Thin Markets</strong> at the Example
-           Workshop on Computational Economics.`,
-  },
-  {
-    date: "Sep 2025",
-    text: `Started as a research intern at the Example Institute for Economic
-           Research.`,
-  },
-  {
-    date: "Jun 2025",
-    text: `Released <a href="https://github.com/example">policy-parse</a>, an
-           open-source toolkit for extracting structured policy attributes
-           from government documents.`,
+    date: "Aug 3, 2025",
+    text: "Not yet.",
   },
 ];
 
@@ -99,25 +69,25 @@ export const news = [
 // feeds the structured-data block that tells search engines where you studied.
 export const education = [
   {
-    org: "Northfield University",
-    role: "Ph.D. in Economics",
-    date: "Sep 2023 – Jun 2028 (expected)",
-    logo: northfield,
-    url: "https://example.edu/",
+    org: "Universidade de São Paulo",
+    role: "Double Degree with Politecnico di Milano, Engenharia da Computação",
+    date: "Aug 2026 – Present",
+    logo: usp,
+    url: "https://www.usp.br/",
   },
   {
-    org: "Lakeside Institute of Technology",
-    role: "Visiting Student, Department of Economics",
-    date: "Jan 2023 – Jun 2023",
-    logo: lakeside,
-    url: "https://example.org/",
+    org: "Politecnico di Milano",
+    role: "Master of Engineering in Geoinformatics Engineering",
+    date: "Sep 2025 – Present",
+    logo: polimi,
+    url: "https://www.polimi.it/en/",
   },
   {
-    org: "Riverbend State University",
-    role: "B.A. in Economics, minor in Statistics",
-    date: "Sep 2019 – Jun 2023",
-    logo: riverbend,
-    url: "https://example.net/",
+    org: "China University of Geosciences Beijing",
+    role: "Bachelor of Engineering in Computer Science and Technology",
+    date: "Sep 2020 – Jun 2024",
+    logo: cugb,
+    url: "https://en.cugb.edu.cn/",
   },
 ];
 
@@ -251,19 +221,19 @@ export const projects = [
 // Grants, prizes, fellowships. Empty the array to hide the section.
 export const awards = [
   {
-    org: "Example Foundation Doctoral Fellowship",
-    role: "Three-year fellowship for research on market design",
-    date: "2025",
+    org: "First-Class Scholarship",
+    role: "China University of Geosciences Beijing",
+    date: "2021 – 2024",
   },
   {
-    org: "Best Student Paper, EXAMPLE 2025",
-    role: "For “Measuring Policy at Scale”",
-    date: "2025",
+    org: "Esri Cup GIS Development Competition for Chinese College Students",
+    role: "Second Prize",
+    date: "2022",
   },
   {
-    org: "Riverbend State University Departmental Prize in Economics",
-    role: "Awarded to the top graduating student in the cohort",
-    date: "2023",
+    org: "Hefei Full Marathon",
+    role: "Personal Best: 2:58:32",
+    date: "2024",
   },
 ];
 
@@ -284,4 +254,4 @@ export const teaching = [
 
 // Shown in the footer. Worth bumping whenever you edit the page — it tells a
 // visitor whether they are reading something current.
-export const lastUpdated = "January 2026";
+export const lastUpdated = "August 2026";

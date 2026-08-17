@@ -402,12 +402,12 @@ section hr {
   align-items: baseline;
 }
 .entries.has-logo .entry {
-  grid-template-columns: 48px 1fr auto;
+  grid-template-columns: 80px 1fr auto;
   gap: 20px;
   align-items: center; /* steadier than baseline once a logo is in the row */
 }
 .entry-logo {
-  width: 48px;
+  width: 80px;
   height: 48px;
   display: block;
 }

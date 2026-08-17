@@ -4,7 +4,6 @@ import Sidebar from "../components/Sidebar.astro";
 import Section from "../components/Section.astro";
 import EntryList from "../components/EntryList.astro";
 import NewsList from "../components/NewsList.astro";
-import PubItem from "../components/PubItem.astro";
 import DemoNotice from "../components/DemoNotice.astro";
 import { site, absoluteUrl } from "../site.config.js";
 import {
@@ -12,12 +11,7 @@ import {
   about,
   news,
   education,
-  publications,
-  workingPapers,
-  experience,
-  projects,
   awards,
-  teaching,
   lastUpdated,
 } from "../data.js";
 
@@ -94,14 +88,6 @@ const jsonLd = {
       }
 
       {
-        news.length > 0 && (
-          <Section id="news" title="News">
-            <NewsList items={news} />
-          </Section>
-        )
-      }
-
-      {
         education.length > 0 && (
           <Section id="education" title="Education">
             <EntryList items={education} />
@@ -110,57 +96,17 @@ const jsonLd = {
       }
 
       {
-        publications.length > 0 && (
-          <Section id="publications" title="Publications">
-            <div class="pubs">
-              {publications.map((p) => (
-                <PubItem {...p} />
-              ))}
-            </div>
-          </Section>
-        )
-      }
-
-      {
-        workingPapers.length > 0 && (
-          <Section id="working-papers" title="Working Papers">
-            <div class="pubs">
-              {workingPapers.map((p) => (
-                <PubItem {...p} />
-              ))}
-            </div>
-          </Section>
-        )
-      }
-
-      {
-        experience.length > 0 && (
-          <Section id="experience" title="Research Experience">
-            <EntryList items={experience} />
-          </Section>
-        )
-      }
-
-      {
-        projects.length > 0 && (
-          <Section id="projects" title="Projects">
-            <EntryList items={projects} />
+        news.length > 0 && (
+          <Section id="news" title="News">
+            <NewsList items={news} />
           </Section>
         )
       }
 
       {
         awards.length > 0 && (
-          <Section id="awards" title="Awards & Grants">
+          <Section id="awards" title="Honors & Awards">
             <EntryList items={awards} />
-          </Section>
-        )
-      }
-
-      {
-        teaching.length > 0 && (
-          <Section id="teaching" title="Teaching">
-            <EntryList items={teaching} />
           </Section>
         )
       }
